@@ -25,7 +25,7 @@ public class Book {
         this.description = description;
         this.rate = rate;
         this.dateOfPublishing = dateOfPublishing;
-        this.dateOfHire = dateOfHire;
+        
     }
 
     public int getId() {
