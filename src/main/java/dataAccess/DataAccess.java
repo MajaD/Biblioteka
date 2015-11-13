@@ -10,10 +10,13 @@ import model.Book;
 public class DataAccess {
     
     private static List<Book> books = new LinkedList<Book>();
-    
+    public static int IdCounter =0;
+
     public void addBook(Book book)
     {
+        
         books.add(book);
+        IdCounter++;
     }
     
     public static List<Book> getAllBooks()
