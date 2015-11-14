@@ -33,7 +33,7 @@
             DataAccess ba = new DataAccess();
             ba.addBook(b);
             
-            response.sendRedirect("/Biblioteka/AllBooks");
+            response.sendRedirect("/Biblioteka/allBooksView");
         %>  
     </body>
 </html>

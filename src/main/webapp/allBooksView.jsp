@@ -32,7 +32,7 @@
                 <tr>
                     <td>${p.id}</td>
                     <td>${p.title}</td>
-                   <!-- <td>${p.author}</td> -->
+                   
                     <td>${p.category}</td>
                     <td>${p.publishingHouse}</td>
                     <td>${p.dateOfPublishing}</td>
