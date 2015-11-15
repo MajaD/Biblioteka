@@ -19,7 +19,6 @@
             <tr>
                 <th>Id</th>
                 <th>Tytuł</th>
-                <th>Autor</th>
                 <th>Gatunek</th>
                 <th>Wydawnictwo</th>
                 <th>Rok wydania</th>
