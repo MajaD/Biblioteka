@@ -1,13 +1,10 @@
 <%-- 
-    Document   : ManagerAddNew
-    Created on : 2015-11-12, 23:01:05
+    Document   : ManagerEdit
+    Created on : 2015-11-15, 22:58:45
     Author     : Maja
 --%>
 
 <%@page import="dataAccess.DataAccess"%>
-<%@page import="model.Book"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,11 +14,9 @@
     </head>
     <body>
         <%
+            String idPom = request.getParameter("id");
+            int id = Integer.parseInt(idPom);
             String title = request.getParameter("title");
-            Date dateTemp = new Date(System.currentTimeMillis());
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/mm/dd");
-            String date = dateFormat.format(dateTemp.getTime());
-            
             String description = request.getParameter("description");
             String category = request.getParameter("category");
             String publishinghouse = request.getParameter("publishinghouse");
@@ -29,11 +24,10 @@
             String tempRate = request.getParameter("rate");
             int rate = Integer.parseInt(tempRate);
             
-            Book b = new Book(dataAccess.DataAccess.IdCounter, title, category, publishinghouse, description, rate, dateofpublishing);
-            DataAccess dataa = new DataAccess();
-            dataa.addBook(b);
+            DataAccess da = new DataAccess();
+            da.edit(id, title, description, category, publishinghouse, rate,dateofpublishing);
             
             response.sendRedirect("/Biblioteka/allBooksView");
-        %>  
+        %>
     </body>
 </html>

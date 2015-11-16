@@ -8,8 +8,6 @@ package servlet;
 import dataAccess.DataAccess;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Maja
  */
-public class EditBook extends HttpServlet {
+public class DeleteBook extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,19 +30,12 @@ public class EditBook extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        {
+            throws ServletException, IOException {
         String idPom = request.getParameter("id");
         int id = Integer.parseInt(idPom);
-        request.setAttribute("getById", DataAccess.getById(id));
-        RequestDispatcher rd = request.getRequestDispatcher("EditBook.jsp");
-        try {
-            rd.forward(request, response);
-        } catch (ServletException ex ) {
-            Logger.getLogger(EditBook.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(EditBook.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+        DataAccess da = new DataAccess();
+        da.delete(id);
+        response.sendRedirect("/Biblioteka/allBooksView");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

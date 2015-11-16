@@ -21,11 +21,10 @@
                 <th>Tytuł</th>
                 <th>Gatunek</th>
                 <th>Wydawnictwo</th>
-                <th>Rok wydania</th>
-                <th>Ocena</th>
                 <th>Opis</th>
+                <th>Ocena</th>
+                <th>Rok wydania</th>
                 <th>Na stanie</th>
-                <th>Data wypożyczenia</th> 
             </tr>
             <c:forEach items="${allBooksView}" var="p">
                 <tr>
@@ -34,11 +33,12 @@
                    
                     <td>${p.category}</td>
                     <td>${p.publishingHouse}</td>
-                    <td>${p.dateOfPublishing}</td>
-                    <td>${p.rate}</td>
                     <td>${p.description}</td>
+                    <td>${p.rate}</td>
+                    
+                    <td>${p.dateOfPublishing}</td>
                     <td>${p.rent}</td>
-                    <td>${p.dateOfHire}</td>
+                   
                     <td>
                         <a href="edit?id=${p.id}">Edytuj</a>
                         <a href="delete?id=${p.id}">Usuń</a>

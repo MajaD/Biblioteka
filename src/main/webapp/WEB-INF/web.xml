@@ -4,9 +4,17 @@
         <servlet-name>EditBook</servlet-name>
         <servlet-class>servlet.EditBook</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteBook</servlet-name>
+        <servlet-class>servlet.DeleteBook</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>EditBook</servlet-name>
         <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteBook</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
