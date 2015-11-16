@@ -1,7 +1,9 @@
 package dataAccess;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import model.Book;
 /**
  *
@@ -37,7 +39,7 @@ public class DataAccess {
             return null;
     }
     
-   public void edit (int id, String title, String category, String publishingHouse, String description, int rate, String dateOfPublishing)
+   public void edit (int id, String title, String category, String publishingHouse, String description, int rate, String dateOfPublishing, String dateOfHire, boolean rent)
    {
        if(id < books.size() && id > -1)
        {
@@ -47,6 +49,8 @@ public class DataAccess {
            books.get(id).setDescription(description);
            books.get(id).setRate(rate);
            books.get(id).setDateOfPublishing(dateOfPublishing);
+           books.get(id).setDateOfHire(dateOfHire);
+           books.get(id).setRent(rent);
        }
    }
    

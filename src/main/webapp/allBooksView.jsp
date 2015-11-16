@@ -24,6 +24,7 @@
                 <th>Opis</th>
                 <th>Ocena</th>
                 <th>Rok wydania</th>
+                <th>Data wypożyczenia</th>
                 <th>Na stanie</th>
             </tr>
             <c:forEach items="${allBooksView}" var="p">
@@ -37,6 +38,7 @@
                     <td>${p.rate}</td>
                     
                     <td>${p.dateOfPublishing}</td>
+                    <td>${p.dateOfHire}</td>
                     <td>${p.rent}</td>
                    
                     <td>

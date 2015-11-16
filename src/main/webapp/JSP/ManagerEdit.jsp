@@ -23,9 +23,12 @@
             String dateofpublishing = request.getParameter("dateofpublishing");
             String tempRate = request.getParameter("rate");
             int rate = Integer.parseInt(tempRate);
+            String dateofhire = request.getParameter("dateofhire");
+            String tempbool = request.getParameter("rent");
+            boolean rent = Boolean.valueOf(tempbool);
             
             DataAccess da = new DataAccess();
-            da.edit(id, title, description, category, publishinghouse, rate,dateofpublishing);
+            da.edit(id, title, description, category, publishinghouse, rate, dateofpublishing, dateofhire, rent);
             
             response.sendRedirect("/Biblioteka/allBooksView");
         %>

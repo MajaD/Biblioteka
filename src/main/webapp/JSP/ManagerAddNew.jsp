@@ -28,8 +28,11 @@
             String dateofpublishing = request.getParameter("dateofpublishing");
             String tempRate = request.getParameter("rate");
             int rate = Integer.parseInt(tempRate);
+            String dateofhire = request.getParameter("dateofhire");
+            String tempbool = request.getParameter("rent");
+            boolean rent = Boolean.valueOf(tempbool);
             
-            Book b = new Book(dataAccess.DataAccess.IdCounter, title, category, publishinghouse, description, rate, dateofpublishing);
+            Book b = new Book(dataAccess.DataAccess.IdCounter, title, category, publishinghouse, description, rate, dateofpublishing, dateofhire, rent);
             DataAccess dataa = new DataAccess();
             dataa.addBook(b);
             

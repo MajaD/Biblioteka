@@ -17,7 +17,7 @@ public class Book {
     private String dateOfHire;
     private boolean rent;
 
-    public Book(int id, String title, String category, String publishingHouse, String description, int rate, String dateOfPublishing) {
+    public Book(int id, String title, String category, String publishingHouse, String description, int rate, String dateOfPublishing, String dateOfHire, boolean rent) {
         this.id = id;
         this.title = title;
         this.category = category;
@@ -25,6 +25,8 @@ public class Book {
         this.description = description;
         this.rate = rate;
         this.dateOfPublishing = dateOfPublishing;
+        this.dateOfHire = dateOfHire;
+        this.rent = rent;
         
     }
 
