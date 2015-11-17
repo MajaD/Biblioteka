@@ -11,6 +11,7 @@ import model.Book;
  */
 public class DataAccess {
     
+    // lista typu book tu, przykladowe wpisy tam
     private static List<Book> books = new LinkedList<Book>() {
     {
         add(new Book(IdCounter, "Światła pochylenie","Laura Whitcomb", "Romans", "Initium", "Ktoś na mnie patrzył. To niezwykłe uczucie, gdy jest się martwym", 3, "2005", "2015/11/15", true));
@@ -28,6 +29,7 @@ public class DataAccess {
     
     public static int IdCounter;
 
+    //dodaje ksiazke tutej
     
     public void addBook(Book book)
     {
@@ -36,10 +38,13 @@ public class DataAccess {
         IdCounter++;
     }
     
+    //zwracam cala liste tu
     public static List<Book> getAllBooks()
     {
         return books;
     }
+    
+    //zwrocam ksiazke o danym id tu
     
     public static List<Book> getById(int id)
     {
@@ -54,6 +59,7 @@ public class DataAccess {
             return null;
     }
     
+   //metoda edycji tu
    public void edit (int id, String title, String author, String category, String publishingHouse, String description, int rate, String dateOfPublishing, String dateOfHire, boolean rent)
    {
        if(id < books.size() && id > -1)
@@ -70,6 +76,7 @@ public class DataAccess {
        }
    }
    
+   //usuwanie tu
    public void delete (int id)
    {
        if(id < books.size() && id > -1)

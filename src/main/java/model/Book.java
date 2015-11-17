@@ -18,6 +18,8 @@ public class Book {
     private String dateOfHire;
     private boolean rent;
 
+//konstruktor klasy tu
+    
     public Book(int id, String title, String author, String category, String publishingHouse, String description, int rate, String dateOfPublishing, String dateOfHire, boolean rent) {
         this.id = id;
         this.title = title;
@@ -32,6 +34,8 @@ public class Book {
         
     }
 
+    //getery i setery tu
+    
     public int getId() {
         return id;
     }
