@@ -53,7 +53,7 @@
                 <input type="text" value="${p.dateOfHire}" name="dateofhire" style="width: 200px"><br>
                 
                 Na stanie:<br>
-                <input type="checkbox" value ="${p.rent}" name="rent"><br>
+                <input type="checkbox" checked="${p.rent}" name="rent"><br>
                 
                 <input type="submit" value="Edytuj">
             </form>

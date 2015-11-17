@@ -25,8 +25,7 @@
             String tempRate = request.getParameter("rate");
             int rate = Integer.parseInt(tempRate);
             String dateofhire = request.getParameter("dateofhire");
-            String tempbool = request.getParameter("rent");
-            boolean rent = Boolean.valueOf(tempbool);
+            boolean rent = request.getParameter("rent") !=null;
             
             DataAccess da = new DataAccess();
             da.edit(id, title, author, category, publishinghouse, description, rate, dateofpublishing, dateofhire, rent);
