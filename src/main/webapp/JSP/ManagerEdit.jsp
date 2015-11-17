@@ -17,6 +17,7 @@
             String idPom = request.getParameter("id");
             int id = Integer.parseInt(idPom);
             String title = request.getParameter("title");
+            String author = request.getParameter("author");
             String description = request.getParameter("description");
             String category = request.getParameter("category");
             String publishinghouse = request.getParameter("publishinghouse");
@@ -28,7 +29,7 @@
             boolean rent = Boolean.valueOf(tempbool);
             
             DataAccess da = new DataAccess();
-            da.edit(id, title, category, publishinghouse, description, rate, dateofpublishing, dateofhire, rent);
+            da.edit(id, title, author, category, publishinghouse, description, rate, dateofpublishing, dateofhire, rent);
             
             response.sendRedirect("/Biblioteka/allBooksView");
         %>

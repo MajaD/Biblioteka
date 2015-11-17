@@ -13,13 +13,13 @@ public class DataAccess {
     
     private static List<Book> books = new LinkedList<Book>() {
     {
-        add(new Book(IdCounter, "Światła pochylenie", "Romans", "Initium", "Ktoś na mnie patrzył. To niezwykłe uczucie, gdy jest się martwym", 3, "2005", "2015/11/15", true));
+        add(new Book(IdCounter, "Światła pochylenie","Laura Whitcomb", "Romans", "Initium", "Ktoś na mnie patrzył. To niezwykłe uczucie, gdy jest się martwym", 3, "2005", "2015/11/15", true));
         IdCounter++;
-        add(new Book(IdCounter, "Sorry", "Thriller", "TELBIT", "To on robi sprawców ze swoich ofiar", 5, "2009", "", false));
+        add(new Book(IdCounter, "Sorry", "Thriller", "Zoran Drevenkar", "TELBIT", "To on robi sprawców ze swoich ofiar", 5, "2009", "", false));
         IdCounter++;
-        add(new Book(IdCounter, "Kiedy śpisz", "Horror ", "Albatros", "On nigdy nie śpi", 4, "2011", "2015/11/10", true));
+        add(new Book(IdCounter, "Kiedy śpisz","Alberto Marini", "Horror ", "Albatros", "On nigdy nie śpi", 4, "2011", "2015/11/10", true));
         IdCounter++;
-        add(new Book(IdCounter, "Strażniczka bramy", "Fantastyka", "TELEBIT", "Otwieram książkę [...] i odczytuje treść proroctwa, starając się dostrzec sens w jego bezsensie", 3, "2009", "", false));
+        add(new Book(IdCounter, "Strażniczka bramy", "Michelle Zink","Fantastyka", "TELEBIT", "Otwieram książkę [...] i odczytuje treść proroctwa, starając się dostrzec sens w jego bezsensie", 3, "2009", "", false));
         IdCounter++;
         
     }
@@ -54,10 +54,11 @@ public class DataAccess {
             return null;
     }
     
-   public void edit (int id, String title, String category, String publishingHouse, String description, int rate, String dateOfPublishing, String dateOfHire, boolean rent)
+   public void edit (int id, String title, String author, String category, String publishingHouse, String description, int rate, String dateOfPublishing, String dateOfHire, boolean rent)
    {
        if(id < books.size() && id > -1)
        {
+           books.get(id).setAuthor(author);
            books.get(id).setTitle(title);
            books.get(id).setCategory(category);
            books.get(id).setPublishingHouse(publishingHouse);

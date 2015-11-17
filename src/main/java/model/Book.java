@@ -9,6 +9,7 @@ public class Book {
     
     private int id;
     private String title;
+    private String author;
     private String category;
     private String publishingHouse;
     private String description;
@@ -17,9 +18,10 @@ public class Book {
     private String dateOfHire;
     private boolean rent;
 
-    public Book(int id, String title, String category, String publishingHouse, String description, int rate, String dateOfPublishing, String dateOfHire, boolean rent) {
+    public Book(int id, String title, String author, String category, String publishingHouse, String description, int rate, String dateOfPublishing, String dateOfHire, boolean rent) {
         this.id = id;
         this.title = title;
+        this.author = author;
         this.category = category;
         this.publishingHouse = publishingHouse;
         this.description = description;
@@ -46,6 +48,13 @@ public class Book {
         this.title = title;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
     public String getCategory() {
         return category;
     }

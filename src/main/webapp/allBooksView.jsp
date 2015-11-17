@@ -19,6 +19,7 @@
             <tr>
                 <th>Id</th>
                 <th>Tytuł</th>
+                <th>Autor</th>
                 <th>Gatunek</th>
                 <th>Wydawnictwo</th>
                 <th>Opis</th>
@@ -31,7 +32,7 @@
                 <tr>
                     <td>${p.id}</td>
                     <td>${p.title}</td>
-                   
+                    <td>${p.author}</td>
                     <td>${p.category}</td>
                     <td>${p.publishingHouse}</td>
                     <td>${p.description}</td>

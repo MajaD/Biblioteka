@@ -17,7 +17,9 @@
     </head>
     <body>
         <%
+            
             String title = request.getParameter("title");
+            String author = request.getParameter("author");
             Date dateTemp = new Date(System.currentTimeMillis());
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/mm/dd");
             String date = dateFormat.format(dateTemp.getTime());
@@ -32,7 +34,7 @@
             String tempbool = request.getParameter("rent");
             boolean rent = Boolean.valueOf(tempbool);
             
-            Book b = new Book(dataAccess.DataAccess.IdCounter, title, category, publishinghouse, description, rate, dateofpublishing, dateofhire, rent);
+            Book b = new Book(dataAccess.DataAccess.IdCounter, title, author, category, publishinghouse, description, rate, dateofpublishing, dateofhire, rent);
             DataAccess dataa = new DataAccess();
             dataa.addBook(b);
             

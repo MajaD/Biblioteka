@@ -20,6 +20,8 @@
                 <input type="hidden" name ="id" value="${p.id}">
                 Tytul:<br>
                 <input type="text" value="${p.title}" name="title" style="width: 200px"><br>
+                Autor:<br>
+                <input type="text" value="${p.author}" name="author" style="width: 200px"><br>
                 Gatunek:<br>
                 <select name="category">
                     <option value="${p.category}">${p.category}</option>
