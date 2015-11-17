@@ -11,9 +11,24 @@ import model.Book;
  */
 public class DataAccess {
     
-    private static List<Book> books = new LinkedList<Book>();
-    public static int IdCounter =0;
+    private static List<Book> books = new LinkedList<Book>() {
+    {
+        add(new Book(IdCounter, "Światła pochylenie", "Romans", "Initium", "Ktoś na mnie patrzył. To niezwykłe uczucie, gdy jest się martwym", 3, "2005", "2015/11/15", true));
+        IdCounter++;
+        add(new Book(IdCounter, "Sorry", "Thriller", "TELBIT", "To on robi sprawców ze swoich ofiar", 5, "2009", "", false));
+        IdCounter++;
+        add(new Book(IdCounter, "Kiedy śpisz", "Horror ", "Albatros", "On nigdy nie śpi", 4, "2011", "2015/11/10", true));
+        IdCounter++;
+        add(new Book(IdCounter, "Strażniczka bramy", "Fantastyka", "TELEBIT", "Otwieram książkę [...] i odczytuje treść proroctwa, starając się dostrzec sens w jego bezsensie", 3, "2009", "", false));
+        IdCounter++;
+        
+    }
+};
+    
+    
+    public static int IdCounter;
 
+    
     public void addBook(Book book)
     {
         
@@ -61,4 +76,8 @@ public class DataAccess {
            books.remove(id);
        }
    }
+
+    private void add(Book book) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

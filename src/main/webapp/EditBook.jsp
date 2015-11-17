@@ -27,6 +27,8 @@
                     <option value="Romans">Romans</option>
                     <option value="Thriller">Thriller</option>
                     <option value="Comedy">Komedia</option>
+                    <option value="Adventure">Przygodowy</option>
+                    <option value="Fantasy">Fantastyka</option>
                 </select><br>
                 Wydawnictwo:<br>
                 <input type="text"  value="${p.publishingHouse}" name="publishinghouse" style="width: 200px"><br>
