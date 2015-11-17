@@ -28,7 +28,7 @@
             boolean rent = Boolean.valueOf(tempbool);
             
             DataAccess da = new DataAccess();
-            da.edit(id, title, description, category, publishinghouse, rate, dateofpublishing, dateofhire, rent);
+            da.edit(id, title, category, publishinghouse, description, rate, dateofpublishing, dateofhire, rent);
             
             response.sendRedirect("/Biblioteka/allBooksView");
         %>
