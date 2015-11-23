@@ -61,14 +61,16 @@ public class DataAccess {
     
     public static Book getById(int id)
     {
-        Book b = null;
-        if(id < books.size() && id > -1)
+        Book book = null;
+        for(Book b : books)
         {
-            b = books.get(id);
-            return b;
+            if(b.getId() == id)
+            {
+                book = b;
+                break;
+            }
         }
-        else 
-            return null;
+        return book;
     }
     
    //metoda edycji tu
@@ -91,9 +93,13 @@ public class DataAccess {
    //usuwanie tu
    public void delete (int id)
    {
-       if(id < books.size() && id > -1)
+       for(Book b : books)
        {
-           books.remove(id);
+           if(b.getId() == id)
+           {
+               books.remove(b);
+               break;
+           }
        }
    }
 
