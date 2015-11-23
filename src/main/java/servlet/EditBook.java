@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Book;
 
 /**
  *
@@ -31,20 +32,24 @@ public class EditBook extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        {
-        String idPom = request.getParameter("id");
-        int id = Integer.parseInt(idPom);
-        request.setAttribute("getById", DataAccess.getById(id));
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
+
+        String idTemp = request.getParameter("id");
+        int id = Integer.parseInt(idTemp);
+
+        dataAccess.DataAccess da = new DataAccess();
+        Book b = da.getById(id);
+
+        request.setAttribute("getById", b);
         RequestDispatcher rd = request.getRequestDispatcher("EditBook.jsp");
         try {
             rd.forward(request, response);
-        } catch (ServletException ex ) {
+        } catch (ServletException ex) {
             Logger.getLogger(EditBook.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(EditBook.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -30,7 +30,7 @@
             DataAccess da = new DataAccess();
             da.edit(id, title, author, category, publishinghouse, description, rate, dateofpublishing, dateofhire, rent);
             
-            response.sendRedirect("/Biblioteka/allBooksView");
+            response.sendRedirect("../allBooksView");
         %>
     </body>
 </html>
