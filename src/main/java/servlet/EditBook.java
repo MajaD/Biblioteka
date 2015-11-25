@@ -37,6 +37,7 @@ public class EditBook extends HttpServlet {
         String idTemp = request.getParameter("id");
         int id = Integer.parseInt(idTemp);
 
+        // pobieram ksiazke o danym id tu
         dataAccess.DataAccess da = new DataAccess();
         Book b = da.getById(id);
 

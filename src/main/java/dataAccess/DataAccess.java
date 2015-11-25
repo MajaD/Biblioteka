@@ -45,20 +45,7 @@ public class DataAccess {
     }
     
     //zwrocam ksiazke o danym id tu
-    
-    /*public static List<Book> getById(int id)
-    {
-        List<Book> bookId = new LinkedList<Book>();
-        if(id < books.size() && id > -1)
-        {
-            Book temp = books.get(id);
-            bookId.add(temp);
-            return bookId;
-        }
-        else 
-            return null;
-    }*/
-    
+       
     public static Book getById(int id)
     {
         Book book = null;
